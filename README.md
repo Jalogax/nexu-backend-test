@@ -1,2 +1,2 @@
 # -nexu-backend-test
-API and documentation developed as a backend  test for Nexu.
+API and documentation developed as a backend test for Nexu.
