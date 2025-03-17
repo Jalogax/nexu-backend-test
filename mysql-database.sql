@@ -19,7 +19,7 @@ INSERT INTO tb_brands(id, name, average_price) VALUES (1, 'Acura', 0), (2, 'Audi
 CREATE TABLE `tb_models` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_brand` int(11) NOT NULL,
-	FOREIGN KEY (id_brand) REFERENCES tb_brands(id),  -- Clave foránea que hace referencia a la tabla 'tb_brands'
+	FOREIGN KEY (id_brand) REFERENCES tb_brands(id),
   `name` varchar(50) NOT NULL,
   `average_price` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
