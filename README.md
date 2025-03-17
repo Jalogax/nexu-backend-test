@@ -184,7 +184,9 @@ To run our API, we just need to have our API in the web root directory of the Ap
 ## Testing
 To test, we can consume all the endpoints that we created and see the response in our browser or using Postman.
 
-You can look the folder "unit-test" to see all the test that I did to this API consuming each endpoint developed.
+You can look the folder "unit-test" to see all the test that I did to this API consuming each endpoint developed. Also, you can import the file called "Nexu Backend Test - Cars.postman_collection.json" to consume it in your Postman sesion.
+
+Note: All the URL contains "localhost" because the tests were applied in a local environment.
 
 #### 1.- GET /brands 
 List all brands.
@@ -223,7 +225,8 @@ If greater param is included show all models with average_price greater than the
     http://localhost/api-cars/models?greater=380000&lower=400000
 
 ## Deploy
-#### Soon!
+#### Coming soon!
 
 ## Personal opinion
 I liked to put into practice my domain in PHP and MySQL. It looks easier but when I was developing I had to pay attention to details and develop a good solution using the best practices. The API can be improved by adding a complete security part. I hope you like it as me doing it. :)
+- José Gaxiola

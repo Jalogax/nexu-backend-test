@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "df8c893d-e226-4aff-842c-038e54c2230c",
+		"name": "Nexu Backend Test - Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5672818"
+	},
+	"item": [
+		{
+			"name": "/brands",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/api-cars/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-cars",
+						"brands"
+					]
+				},
+				"description": "List all brands."
+			},
+			"response": []
+		},
+		{
+			"name": "/brands/(:num)/models",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api-cars/brands/1/models",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-cars",
+						"brands",
+						"1",
+						"models"
+					]
+				},
+				"description": "List all models of the brand."
+			},
+			"response": []
+		},
+		{
+			"name": "/brands",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Jalogax",
+							"type": "text"
+						},
+						{
+							"key": "average_price",
+							"value": "300521",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api-cars/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-cars",
+						"brands"
+					]
+				},
+				"description": "Add new brands. A brand name must be unique. If a brand name is already in use return a response code and error message."
+			},
+			"response": []
+		},
+		{
+			"name": "brands/(:num)/models",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Jalogax model",
+							"type": "text"
+						},
+						{
+							"key": "average_price",
+							"value": "100001",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api-cars/brands/1/models",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-cars",
+						"brands",
+						"1",
+						"models"
+					]
+				},
+				"description": "Add new models to a brand.\n\nA model name must be unique inside a brand. If the brand id doesn't exist return a response code and error message. If the model name already exists for that brand return a response code and error message reflecting it. Average price is optional, if supply it must be greater than 100,000."
+			},
+			"response": []
+		},
+		{
+			"name": "models/(:num)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"average_price\": 10000}"
+				},
+				"url": {
+					"raw": "http://localhost/api-cars/models/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-cars",
+						"models",
+						"1"
+					]
+				},
+				"description": "Update the average price of a model. The average_price must be greater then 100,000."
+			},
+			"response": []
+		},
+		{
+			"name": "/models",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/api-cars/models?greater=380000&lower=400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-cars",
+						"models"
+					],
+					"query": [
+						{
+							"key": "greater",
+							"value": "380000"
+						},
+						{
+							"key": "lower",
+							"value": "400000"
+						}
+					]
+				},
+				"description": "List all models.  \nIf greater param is included show all models with average_price greater than the param. If lower param is included show all models with average_price lower than the param."
+			},
+			"response": []
+		}
+	]
+}
