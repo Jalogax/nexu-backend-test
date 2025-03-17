@@ -26,11 +26,39 @@ class Database extends Config
      */
 
     // Google Cloud credentials
-    public array $default = [ 
+    //public array $default = [ 
+    //    'DSN'          => '',
+    //    'hostname'     => '35.184.223.227',
+    //    'username'     => 'root',
+    //    'password'     => 'N14S&"oIRCmaAxM/',
+    //    'database'     => 'db_cars',
+    //    'DBDriver'     => 'MySQLi',
+    //    'DBPrefix'     => '',
+    //    'pConnect'     => false,
+    //    'DBDebug'      => true,
+    //    'charset'      => 'utf8mb4',
+    //    'DBCollat'     => 'utf8mb4_general_ci',
+    //    'swapPre'      => '',
+    //    'encrypt'      => false,
+    //    'compress'     => false,
+    //    'strictOn'     => false,
+    //    'failover'     => [],
+    //    'port'         => 3306,
+    //    'numberNative' => false,
+    //    'foundRows'    => false,
+    //    'dateFormat'   => [
+    //        'date'     => 'Y-m-d',
+    //        'datetime' => 'Y-m-d H:i:s',
+    //        'time'     => 'H:i:s',
+    //    ],
+    //];
+
+    // Local credentials
+    public array $default = [
         'DSN'          => '',
-        'hostname'     => '35.184.223.227',
+        'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => 'N14S&"oIRCmaAxM/',
+        'password'     => '',
         'database'     => 'db_cars',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
@@ -52,34 +80,6 @@ class Database extends Config
             'time'     => 'H:i:s',
         ],
     ];
-
-    // Local credentials
-    // public array $default = [
-    //     'DSN'          => '',
-    //     'hostname'     => 'localhost',
-    //     'username'     => 'root',
-    //     'password'     => '',
-    //     'database'     => 'db_cars',
-    //     'DBDriver'     => 'MySQLi',
-    //     'DBPrefix'     => '',
-    //     'pConnect'     => false,
-    //     'DBDebug'      => true,
-    //     'charset'      => 'utf8mb4',
-    //     'DBCollat'     => 'utf8mb4_general_ci',
-    //     'swapPre'      => '',
-    //     'encrypt'      => false,
-    //     'compress'     => false,
-    //     'strictOn'     => false,
-    //     'failover'     => [],
-    //     'port'         => 3306,
-    //     'numberNative' => false,
-    //     'foundRows'    => false,
-    //     'dateFormat'   => [
-    //         'date'     => 'Y-m-d',
-    //         'datetime' => 'Y-m-d H:i:s',
-    //         'time'     => 'H:i:s',
-    //     ],
-    // ];
 
     /**
      * This database connection is used when running PHPUnit database tests.
