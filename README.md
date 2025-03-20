@@ -203,11 +203,20 @@ Add new brands. A brand name must be unique. If a brand name is already in use r
 
     http://localhost/api-cars/brands
 
+	
+Body:
+	name: Jalogax
+	average_price: 300521
+
 #### 4.- POST   /brands/:id/models
 Add new models to a brand.
 A model name must be unique inside a brand. If the brand id doesn't exist return a response code and error message. If the model name already exists for that brand return a response code and error message reflecting it. Average price is optional, if supply it must be greater than 100,000.
 
     http://localhost/api-cars/brands/3/models
+
+Body:
+	name: Jalogax model
+	average_price: 100001
 
 #### 5.- PUT    /models/:id
 Update the average price of a model. The average_price must be greater then 100,000.
@@ -225,7 +234,50 @@ If greater param is included show all models with average_price greater than the
     http://localhost/api-cars/models?greater=380000&lower=400000
 
 ## Deploy
-#### Coming soon!
+#### 1.- GET /brands 
+List all brands.
+
+    http://api-ci.rf.gd/api-cars/brands
+
+#### 2.- GET    /brands/:id/models 
+List all models of the brand.
+
+    http://api-ci.rf.gd/api-cars/brands/52/models
+
+#### 3.- POST   /brands
+Add new brands. A brand name must be unique. If a brand name is already in use return a response code and error message.
+
+    http://api-ci.rf.gd/api-cars/brands
+	
+Body:
+	name: Jalogax
+	average_price: 300521
+
+#### 4.- POST   /brands/:id/models
+Add new models to a brand.
+A model name must be unique inside a brand. If the brand id doesn't exist return a response code and error message. If the model name already exists for that brand return a response code and error message reflecting it. Average price is optional, if supply it must be greater than 100,000.
+
+    http://api-ci.rf.gd/api-cars/brands/3/models
+
+Body:
+	name: Jalogax model
+	average_price: 100001
+
+#### 5.- PUT    /models/:id
+Update the average price of a model. The average_price must be greater then 100,000.
+
+    http://api-ci.rf.gd/api-cars/models/15
+
+Body:
+
+    {"average_price": 312123}
+
+#### 6.- GET    /models
+List all models.
+If greater param is included show all models with average_price greater than the param. If lower param is included show all models with average_price lower than the param.
+
+    http://api-ci.rf.gd/api-cars/models?greater=380000&lower=400000
+
 
 ## Personal opinion
 I liked to put into practice my domain in PHP and MySQL. It looks easier but when I was developing I had to pay attention to details and develop a good solution using the best practices. The API can be improved by adding a complete security part. I hope you like it as me doing it. :)
